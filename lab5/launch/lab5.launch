@@ -1,0 +1,10 @@
+<launch>
+<rosparam param="goalx">1.0</rosparam>
+<rosparam param="goaly">13.0</rosparam>
+         
+<node name="lab5" pkg="lab5" type="lab5.py" args="$(find lab5)" output="screen" />
+<node name="talker" pkg="lab5" type="publisher.py" args="$(find lab5)/src/publisher.py" output="screen" />
+<node name="stage" pkg="stage_ros" type="stageros"
+	      args="$(find lab5)/world/playground.world" />
+
+</launch>
